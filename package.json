@@ -2,11 +2,13 @@
   "name": "express-api",
   "version": "1.0.0",
   "description": "",
-  "main": "app.ts",
+  "main": "src/app.ts",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpileOnly ./app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "dev": "ts-node-dev --respawn --transpileOnly index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "tsc": "tsc",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +19,11 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.1",
+    "@types/jest": "^24.0.18",
+    "@types/supertest": "^2.0.8",
+    "jest": "^24.9.0",
     "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
     "ts-node-dev": "^1.0.0-pre.42"
   }
 }

@@ -37,9 +37,9 @@ const validateParams: RequestHandler = (req, res, next) => {
   if (long === undefined || lat === undefined) {
     return res
       .status(400)
-      .json({'error': 'Missing requred parameters'})
+      .json({'error': 'Missing required parameters'})
   }
-  if (!parseFloat(long) || !parseFloat(lat)) {
+  if (Number.isNaN(parseFloat(long)) || Number.isNaN(parseFloat(lat))) {
     return res
       .status(400)
       .json({'error': 'Parameters should be numbers'})
@@ -48,6 +48,7 @@ const validateParams: RequestHandler = (req, res, next) => {
     lat: parseFloat(lat),
     lng: parseFloat(long),
   }
+
   next();
 }
 

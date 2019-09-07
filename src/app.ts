@@ -3,10 +3,8 @@ import users from './routes/users';
  
 const app = express();
  
+app.get('/', (req, res) => res.send('ok'));
+
 app.use('/users', users);
 
-app.get('/health', (req, res) => {
-  res.send('Hello mummy!');
-});
- 
-app.listen(5000);
+export default app;
